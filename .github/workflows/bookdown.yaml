@@ -43,10 +43,6 @@ jobs:
           # R -e 'remotes::install_deps(dependencies = TRUE)'
           R -e 'install.packages("bookdown")'
 
-      - name: print env var
-        run: |
-          echo ${{ secrets.FOO }}
-
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
