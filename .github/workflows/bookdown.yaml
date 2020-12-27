@@ -43,8 +43,8 @@ jobs:
           R -e 'remotes::install_cran("BiocManager")'
           R -e 'BiocManager::install(version = "3.12", ask = FALSE)'
           
-          R -e 'BiocManager::install(c("AnnotationDbi", "GO.db", "preprocessCore", "impute", "S4Vectors", "IRanges", "BiocGenerics", "Biobase"))'
-          # R -e 'remotes::install_deps(dependencies = TRUE)'
+          # R -e 'BiocManager::install(c("AnnotationDbi", "GO.db", "preprocessCore", "impute", "S4Vectors", "IRanges", "BiocGenerics", "Biobase"))'
+          R -e 'remotes::install_deps(dependencies = TRUE)'
 
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
