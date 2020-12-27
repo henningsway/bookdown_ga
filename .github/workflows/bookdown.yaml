@@ -40,8 +40,8 @@ jobs:
         run: |
           # R -e 'install.packages("renv")'
           # R -e 'renv::restore()'
-          # R -e 'remotes::install_deps(dependencies = TRUE)'
-          R -e 'install.packages("bookdown")'
+          R -e 'remotes::install_deps(dependencies = TRUE)'
+          # R -e 'install.packages("bookdown")'
 
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
